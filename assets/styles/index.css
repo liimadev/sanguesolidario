@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import './cores.css';
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+
+#header {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#header.rolagem {
+    background-color: var(--branco);
+    box-shadow: 0px 10px 84px -3px rgba(0,0,0,0.2);
+}
+
+#header-content {
+    height: 5vh;
+    padding: 10px 10vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-content img {
+    height: 100%;
+}
+
+nav {
+    width: 30%;
+    display: inherit;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--preto);
+    font-weight: 500;
+    transition: .3s;
+}
+
+.link:hover {
+    font-weight: 700;
+}
+
+a.active {
+    background-color: var(--vermelho);
+    color: var(--branco);
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+h1 {
+    margin: 0;
+    font-size: 60px;
+}
+.cor-vermelho {
+    margin-top: -20px;
+    color: var(--vermelho);
+}
+
+main .bloco {
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 30px 10vw;
+}
+
+main .bloco .esquerda, main .bloco .direita {
+    width: 50%;
+    padding: 10px;
+    display: inherit;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main .bloco .esquerda .link-btn {
+    text-decoration: none;
+    color: var(--branco);
+    background-color: var(--vermelho);
+    width: 30%;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0px 10px 18px 0px rgba(0,0,0,0.1);
+    transition: 0.5s;
+}
+
+main .bloco .esquerda {
+    padding-left: 50px;
+}
+
+main .bloco .esquerda .link-btn:hover, 
+.bloco-suporte form .btn button:hover {
+    background-color: var(--branco);
+    color: var(--vermelho);
+    border: 2px solid var(--vermelho);
+    box-shadow: 0px 10px 18px 0px rgba(0,0,0,0.3);
+}
+
+main .bloco .direita a {
+    text-align: center;
+}
+
+main .bloco .direita img {
+    width: 70%;
+}
+
+
+.bloco-vermelho {
+    display: flex !important;
+    flex-direction: column !important;
+    background-color: var(--vermelho);
+    color: var(--branco);
+    justify-content: center !important;
+    padding-block: 10vh !important;
+    height: 80vh !important;
+}
+
+.bloco-vermelho h1 {
+    margin-bottom: 5%;
+} 
+
+.bloco-vermelho p {
+    font-size: 32px;
+    text-align: justify;
+}
+
+.space {
+    margin-inline: 40px;
+}
+.destaque {
+    padding: 5px;
+    background-color: var(--branco);
+    color: var(--vermelho);
+}
+
+.bloco-suporte {
+    justify-content: start !important;
+    flex-direction: column !important;
+}
+
+.bloco-suporte h1 {
+    color: var(--vermelho) !important;
+}
+
+form {
+    width: 70%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 40px;
+}
+
+form h2 {
+    text-align: center;
+    text-transform: uppercase;
+    padding-block: 5px;
+    border-bottom: 4px solid var(--vermelho);
+}
+form input, form textarea {
+    padding: 5px 10px;
+    outline: none;
+    border: 1px solid var(--preto);
+    border-radius: 5px;
+    resize: none;
+    font-family: "Poppins", Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+
+form .doisInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+form .doisInput input {
+    width: 46%;
+}
+
+form .btn {
+    display: inherit;
+    justify-content: end;
+}
+
+form .btn button {
+    padding: 10px 30px;
+    outline: 0;
+    border: 0;
+    background-color: var(--vermelho);
+    color: var(--branco);
+    font-weight: 700;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+#link-git {
+    color: var(--branco);
+    text-decoration: none;
+    font-style: italic;
+}

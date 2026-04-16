@@ -1,0 +1,26 @@
+:root {
+    --vermelho: #E3180A;
+    --branco: #fff;
+    --preto: #000;
+}
+
+/* Scrollbar para Chrome, Safari e Edge */
+::-webkit-scrollbar {
+    width: 20px; /* Largura da scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--branco); /* Cor do fundo da scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--vermelho);
+    border: 4px solid var(--branco); /* Cor do "thumb" da scrollbar */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+* {
+    scrollbar-width: thin; /* Espessura da scrollbar */
+    scrollbar-color: var(--vermelho) var(--branco); /* Cor do "thumb" e do fundo */
+}
+/* para melhor organizacao e alteração de cores, resolvi juntar todas e apenas importar. */

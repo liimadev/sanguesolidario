@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="assets/doacaoSangue.png" type="image/x-icon">
+        <link rel="stylesheet" href="assets/styles/entradas.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+        <title>Cadastro</title>
+    </head>
+    <body>  
+        <header>
+            <img src="./assets/ssLogoVermelha.png" alt="Sangue Solidário">
+        </header>
+
+        <main>
+            <form action="sistema/home.php" method="post" enctype="multipart/form-data">
+                <div class="titulo">
+                    <h1>Formulário de cadastro</h1>
+                </div>
+                <div class="input">
+                    <div class="ipt1">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" name="nome" id="nome">
+                    </div>
+                </div>
+
+                <div class="input"> <!-- usando flex, quero deixar tres input na mesma linha -->
+                    <div class="ipt3">
+                        <label for="data_nasc">Data de Nascimento</label>
+                        <input type="date" name="data_nasc" id="data_nasc">
+                    </div>
+                    <div class="ipt3">
+                        <label for="genero">Gênero</label>
+                        <select name="genero" id="genero">
+                            <option value="">Selecione</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+                    <div class="ipt3">
+                        <label for="tipoSangue">Tipo Sanguíneo</label>
+                        <select name="tipoSangue" id="tipoSangue">
+                            <option value="">Selecione</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input">
+                    <div class="ipt2">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div class="ipt2">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" name="telefone" id="telefone" required>
+                    </div>
+                </div>
+
+                <div class="input">
+                    <div class="ipt3">
+                        <label for="endereco">Endereço</label>
+                        <input type="text" name="endereco" id="endereco" required>
+                    </div>
+                    <div class="ipt3">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" name="cidade" id="cidade" required>  
+                    </div>
+                    <div class="ipt3">
+                        <label for="cep">CEP</label>
+                        <input type="text" name="cep" id="cep" required>
+                    </div>
+                </div>
+
+                <div class="input">
+                    <div class="ipt1">
+                        <label for="estado">Estado</label>
+                        <select name="estado" id="estado">
+                            <option value="">Selecione</option>
+                            <option value="CE">Ceará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input">
+                    <div class="ipt1"><label>Você já é doador?</label>
+                        <div class="doisInputs" style="justify-content: start;">
+                            <div style="margin-right: 10px;">
+                                <input type="radio" id="eDoador" name="freqDoacao" value="doador" required> <!-- Radio -->
+                                <label for="eDoador">Sim, já sou doador</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="novoDoador" name="freqDoacao" value="novoDoador" required> <!-- Radio -->
+                                <label for="novoDoador">Não, sou um novo doador</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input">
+                    <div class="ipt1">
+                        <label for="condSaude">Condições de Saúde - Anexar diagnóstico médico</label>
+                        <input type="file" name="condSaude" id="condSaude" accept=".jpg, .jpeg, .pdf">
+                    </div>
+                </div>
+
+                <div class="input">
+                    <div class="ipt2">
+                        <label for="senha">Crie sua senha</label>
+                        <input type="password" name="senha" id="senha">
+                    </div>
+                    <div class="ipt2">
+                        <label for="senha2">Confirme sua senha</label>
+                        <input type="password" name="senha2" id="senha2">
+                    </div>
+                </div>
+
+                <div class="input" style="justify-content: flex-start;">
+                    <input type="checkbox" id="consent" name="consent" required> <!-- Checkbox -->
+                    <label for="consent">Eu consinto em ser contatado para futuras doações.</label>
+                </div>
+
+                <div class="input">
+                    <div class="ipt2">
+                        <input type="submit" value="Cadastrar" name="submit">
+                    </div>
+                    <div class="ipt2">
+                        <input type="reset" value="Limpar">
+                    </div>
+                </div>
+                <p id="texto-login">Ou, se preferir, <a href="login.html" id="login">volte ao login</a>!</p>
+            </form>
+        </main>
+
+        <script>
+            $("#telefone").mask("(00) 00000-0000");
+            $("#cep").mask("00.000-000");
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+@import './cores.css';
+
+footer {
+    background-color: var(--preto);
+    color: var(--branco);
+    padding: 50px 10vw;
+}
+
+footer p {
+    font-weight: 500;
+    margin: 0;
+}
+
+footer a {
+    text-decoration: none;
+    margin-inline: 5px;
+    color: var(--vermelho);
+    transition: .5s;
+}
+
+footer a:hover {
+    color: var(--branco);
+    text-decoration: underline;
+}

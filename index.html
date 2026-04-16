@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/index.css">
+    <link rel="stylesheet" href="assets/styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="assets/doacaoSangue.png" type="image/x-icon">
+    <title>Sangue Solidário</title>
+</head>
+<body>
+    <header id="header">
+        <div id="header-content">
+            <img src="./assets/ssLogoVermelha.png" alt="Sangue Solidário">
+            <nav>
+                <a href="#inicio" class="link active">Início</a>
+                <a href="#sobrenos" class="link">Sobre Nós</a>
+                <a href="#suporte" class="link">Suporte</a>
+            </nav>
+
+            <a href="login.html" class="login link"><i class="fa-sharp fa-solid fa-arrow-right-to-bracket"></i> Entrar</a>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="bloco" id="inicio" > <!-- Bloco inicio -->
+            <div class="esquerda">
+                <h1>Doe sangue <h1 class="cor-vermelho">Salve Vidas!</h1></h1>
+                <a href="cadastro.html" class="link-btn">Seja um doador</a>
+            </div>
+            <div class="direita">
+                <a target="_blank" href="https://www.flaticon.com/br/icone-gratis/doacao-de-sangue_1142143?related_id=1142143"><img src="assets/doacaoSangue.png" alt="Doação de Sangue (Crédito: Freepik)" title="Doação de Sangue (Freepik)"></a>
+            </div>
+        </div>
+
+        <div class="bloco bloco-vermelho" id="sobrenos"> <!-- Bloco sobre nos-->
+            <h1>Sobre Nós</h1>
+            <p><span class="space"></span>
+                O "<span class="destaque">Sangue Solidário</span>" é um projeto de portfólio criado <a id="link-git" target="_blank" href="https://github.com/liimadev">Liimadev</a> e sua finalidade é conectar doadores de sangue a centros de coleta.
+            </p>
+        </div>
+        <div class="bloco bloco-suporte" id="suporte"> <!-- Bloco suporte -->
+            <h1>Contate o nosso Suporte</h1>
+            
+            <form action="">
+                <h2>Contato</h2>
+                <div class="doisInput">
+                    <input type="text" name="nome" id="nome" placeholder="Seu Nome">
+                    <input type="email" name="email" id="email" placeholder="Seu E-mail">
+                </div>
+                <input type="text" name="assunto" id="assunto" placeholder="Assunto">
+                <textarea name="mensagem" id="mensagem" rows="4" placeholder="Digite sua mensagem"></textarea>
+
+                <div class="btn">
+                    <button type="submit">Enviar mensagem</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p> IFRN campus Santa Cruz</p>
+        <p>Trabalho de Autoria Web</p>
+        <p>Prof. Marcelo Figueiredo Barbosa Júnior</p>
+        <p>Desenvolvido Por Kellyson Ricardo - Info3v</p>
+        <p>Referências: <a href="https://www.flaticon.com/br" target="_blank">Freepik</a>
+                        <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>
+                        <a href="https://fontawesome.com/" target="_blank">Font Awesome</a> </p>
+    </footer>
+
+    <script>
+        window.addEventListener("scroll", function() {
+            let header = document.querySelector('#header')
+            header.classList.toggle('rolagem', window.scrollY > 0)
+        })
+
+        const links = document.querySelectorAll('nav a');
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Evita o comportamento padrão
+
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                // Rola suavemente para o elemento alvo
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Destacar link ativo ao rolar
+        window.addEventListener('scroll', () => {
+            let scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
+
+            links.forEach(link => {
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                const elementTop = targetElement.offsetTop;
+                const elementHeight = targetElement.offsetHeight;
+
+                // Verifica se a seção está visível
+                if (scrollPos >= elementTop && scrollPos < elementTop + elementHeight) {
+                    links.forEach(l => l.classList.remove('active')); // Remove a classe 'active' de todos
+                    link.classList.add('active'); // Adiciona a classe 'active' ao link atual
+                }
+            });
+        });
+    </script>
+</body>
+</html>

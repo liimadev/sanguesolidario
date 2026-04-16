@@ -1,0 +1,8 @@
+package com.liimadev.sanguesolidario.exceptions;
+
+public class EmailEmUsoException extends RuntimeException {
+
+    public EmailEmUsoException (String mensagem) {
+        super(mensagem);
+    }
+}
